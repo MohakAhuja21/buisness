@@ -41,8 +41,8 @@ useEffect(() => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setSuccessMsg("Logged in successfully. Redirecting to Homepage");
-        setPassword("");
-        setEmail("");
+        // setPassword("");
+        // setEmail("");
         setErrorMsg("");
         setTimeout(() => {
           setSuccessMsg("");
@@ -123,7 +123,5 @@ useEffect(() => {
     </div>
   );
 }
-
-
-
+  
 export default Login;

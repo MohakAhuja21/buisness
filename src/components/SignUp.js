@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebaseConfig";
 
+// LocalStorage code is copied from https://blog.logrocket.com/using-localstorage-react-hooks/
 
 function SignUp() {
   // const [username, setUserName] = useState("");
@@ -88,8 +89,8 @@ function SignUp() {
             );
             // after login it's value will get to null.
             setUserName("");
-            setPassword("");
-            setEmail("");
+            // setPassword("");
+            // setEmail("");
             setAddress("");
             setPhoneNumber("");
             setErrorMsg("");

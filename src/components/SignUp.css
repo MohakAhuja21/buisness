@@ -49,6 +49,7 @@ input[type="password"]{
     font-weight: 620;
 }
 .signup__button{
+    color: #333;
     border-radius: 2px;
     margin-top: 10px;
     width: 100%;
