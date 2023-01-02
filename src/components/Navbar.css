@@ -1,17 +1,16 @@
 .header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     position: sticky;
-    top: 0;
     z-index: 100;
     background-color: #051B4C;
-    height: 60px;
+    height: 57px;
+    padding-bottom: 4px;
 }
 .header__logo{
-    width: 40px;
+    width: 110px;
     object-fit: contain;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 .header__option{
     cursor: pointer;
@@ -20,24 +19,27 @@
     margin-inline: 10px;
 }
 .header__nav{
+    margin-right: 5px;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    margin-left: auto;
 }
 .header__optionLineOne{
     text-transform: capitalize;
-    font-size: 13px;
+    font-size: 14px;
     color: white;
 }
 .header__optionLineTwo{
+    font-size: 16px;
     font-weight: 500;
     color: white;
 }
 .header__optionBasket{
-    margin-top: 8px;
+    /* margin-top: 8px;     */
     color: white;
     display: flex;
     align-items: center;
-    margin-inline: 10px;
+    margin-right: 10px;
     cursor: pointer;
 }
 .header__basketCount{
@@ -50,6 +52,18 @@
 }
 .header__optionBasketMobile{
     display: none;
+}
+.logout-btn{
+    border: none;
+    margin-left: 4px;
+    width: fit-content;
+    border-bottom: 1px #FFBF00 solid;
+    background: #8a95ad44;
+    appearance: none;
+    outline: none;
+    color: whitesmoke;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 /* mobile navbar */
@@ -68,19 +82,18 @@
     font-size: 18px;
     }   
     .header__logo{
-        margin: 0 15px;
+        margin: 0 4px;
     }
     .header__optionBasket{
         display: none;
     }
-    .header > .header__nav>a::before{
-        background: transparent;
-    }
     .header > .header__nav{
+        align-items: flex-start;
         position: absolute;
         top: 60px;
         display: flex;
         flex-direction: column;
+       /* justify-content: space-evenly; */
         background: #051b4cf1;
         left: 0;
         width: 50%;
@@ -91,9 +104,12 @@
     .header > .header__nav.open{
         transform: translateX(0);
     }
+    .header__option{
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
     .header > .nav-toggle{
         position: absolute;
-        top: 2px;
         right: 4px;
         display: flex;
         width: 50px;
@@ -139,7 +155,7 @@
         transform: rotate(-45deg) translate(26px, 26px);
     }
     .header__optionLineOne{
-        font-size: 18px;
+        font-size: 16px;
     }
     .header__optionLineTwo{
         font-size: 17px;
