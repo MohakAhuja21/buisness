@@ -1,39 +1,39 @@
+// LocalStorage code is copied from https://blog.logrocket.com/using-localstorage-react-hooks/
 import "./SignUp.css";
 import logo from "../images/logo white.png";
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // importing firebase items
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebaseConfig";
 
-// LocalStorage code is copied from https://blog.logrocket.com/using-localstorage-react-hooks/
 
 function SignUp() {
   // const [username, setUserName] = useState("");
-  const [username, setUserName] = useState(()=>{
+  const [username, setUserName] = useState(() => {
     const saved = localStorage.getItem("username");
     const initialValue = JSON.parse(saved);
     return initialValue || "";
   });
-  const [password, setPassword] = useState(()=>{
+  const [password, setPassword] = useState(() => {
     const saved = localStorage.getItem("password");
     const initialValue = JSON.parse(saved);
     return initialValue || "";
   });
-  const [email, setEmail] = useState(()=>{
+  const [email, setEmail] = useState(() => {
     const saved = localStorage.getItem("email");
-  const initialValue = JSON.parse(saved);
-  return initialValue || "";
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
   });
   // const [address, setAddress] = useState("");
-  const [address, setAddress] = useState(()=>{
+  const [address, setAddress] = useState(() => {
     const saved = localStorage.getItem("address");
-  const initialValue = JSON.parse(saved);
-  return initialValue || "";
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
   });
   // const [phonenumber, setPhoneNumber] = useState("");
-  const [phonenumber, setPhoneNumber] = useState(()=>{
+  const [phonenumber, setPhoneNumber] = useState(() => {
     const saved = localStorage.getItem("phonenumber");
     const initialValue = JSON.parse(saved);
     return initialValue || "";
@@ -60,7 +60,6 @@ function SignUp() {
   useEffect(() => {
     localStorage.setItem("username", JSON.stringify(username));
   }, [username]);
-
 
   const handleSubmit = (e) => {
     // prevents page from re-freshing
@@ -116,6 +115,23 @@ function SignUp() {
       });
   };
 
+// googleMaps autocomplete api 
+const autoCompleteRef = useRef();
+const inputRef = useRef();
+const options = {
+ componentRestrictions: { country: "in" },
+ fields: ["address_components", "geometry", "icon", "name"],
+ types: ["establishment"]
+};
+
+useEffect(() => {
+  autoCompleteRef.current = new window.google.maps.places.Autocomplete(
+   inputRef.current,
+   options
+  );
+ }, []);
+
+
   return (
     <div>
       {/* header > navbar */}
@@ -163,10 +179,12 @@ function SignUp() {
               value={phonenumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
-            <input
+            <textarea
               type="text"
               placeholder="Address"
               value={address}
+              // google autocomplete api reference.
+              ref={inputRef}
               onChange={(e) => setAddress(e.target.value)}
             />
 

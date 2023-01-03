@@ -21,23 +21,29 @@
 input[type="email"],
 input[type="tel"],
 input[type="text"],
+textarea,
 input[type="password"]{
+    resize: vertical;
+    max-height: 100px;
     margin-top: 17px;
     margin-bottom: 5px;
     width: 98%;
-    height: 40px;
+    height: 43px;
     border: 1px solid lightgray;
     border-radius: 2px;
     outline: none;
     caret-color: #FFBF00;
     font-size: 17px;
 }
+textarea{
+    font-family: inherit;
+}
 ::placeholder{
     padding-left: 5px;
     font-size: 17px;
     color: #333;
 }
-.signup__form input:focus{
+.signup__form input:focus, textarea:focus{
     outline: 2px solid #FFBF00;
     border:none;
 }
@@ -49,7 +55,7 @@ input[type="password"]{
     font-weight: 620;
 }
 .signup__button{
-    color: #333;
+    color: black;
     border-radius: 2px;
     margin-top: 10px;
     width: 100%;
@@ -73,7 +79,7 @@ input[type="password"]{
     width: 100%;
     cursor: pointer;
     font-size: 16px;
-    color: black;
+    color: #333;
 }
 .signup span{
     font-size: 14px;

@@ -23,7 +23,7 @@ input[type="password"]{
     margin-top: 17px;
     margin-bottom: 5px;
     width: 98%;
-    height: 40px;
+    height: 43px;
     border: 1px solid lightgray;
     border-radius: 2px;
     outline: none;
@@ -47,7 +47,7 @@ input[type="password"]{
     font-weight: 620;
 }
 .login__button{
-    color: #333;
+    color: black;
     border-radius: 2px;
     margin-top: 10px;
     width: 100%;
@@ -71,7 +71,7 @@ input[type="password"]{
     width: 100%;
     cursor: pointer;
     font-size: 16px;
-    color: black;
+    color: #333;
 }
 .login span{
     font-size: 14px;
