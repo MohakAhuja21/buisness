@@ -56,20 +56,11 @@ function Navbar() {
         <nav className={`header__nav ${isOpen && "open"}`}>
       {/* adding mobile navbar functionality to header nav */}
           <div className="header__option">
-            <Link to="/signup" style={{textDecoration:"none"}}>
-            <span className="header__optionLineOne">
-              Create an account
-            </span>
-            <br></br>
-            <span className="header__optionLineTwo">
-              Register
-            </span>
-            </Link>
           </div>
           <div className="header__option">
             <Link to="/login" style={{textDecoration:"none"}}>
             <span className="header__optionLineOne">
-              Existing user
+              Signup,
             </span>
             <br></br>
             <span className="header__optionLineTwo">
