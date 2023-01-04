@@ -180,7 +180,6 @@ useEffect(() => {
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <textarea
-              type="text"
               placeholder="Address"
               value={address}
               // google autocomplete api reference.
